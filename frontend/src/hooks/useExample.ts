@@ -48,7 +48,6 @@ function useExample({ category, type, settings }: ExampleInterface) {
 						exampleValue = (fakerInstance[category as keyof Faker] as any)[type]?.({
 							length: settings,
 						});
-						console.log(exampleValue);
 					} else {
 						exampleValue = (fakerInstance[category as keyof Faker] as any)[type]?.(settings);
 					}
@@ -73,7 +72,7 @@ function useExample({ category, type, settings }: ExampleInterface) {
 				}
 				//začasen check če je npr. min > max v nastavitvah (parameters)
 			} else if (exampleValue !== undefined) {
-				setExample(exampleValue);
+				setExample(String(exampleValue));
 			}
 		} else {
 			setExample("no example");
