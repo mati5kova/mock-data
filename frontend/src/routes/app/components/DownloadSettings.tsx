@@ -43,17 +43,17 @@ function DownloadSettings({ downloadSettings, setDownloadSettings }: DownloadSet
 
 					<div className="w-full mb-4">
 						<label
-							htmlFor={downloadSettings.format === "json" ? "fields" : "rows"}
+							htmlFor={downloadSettings.format === "json" ? "records" : "rows"}
 							className="uppercase tracking-wide text-gray-500 text-base font-bold"
 						>
-							{downloadSettings.format === "json" ? "Fields" : "Rows"}
+							{downloadSettings.format === "json" ? "Records" : "Rows"}
 						</label>
 						<input
 							type="number"
-							name={downloadSettings.format === "json" ? "fields" : "rows"}
-							id={downloadSettings.format === "json" ? "fields" : "rows"}
+							name={downloadSettings.format === "json" ? "records" : "rows"}
+							id={downloadSettings.format === "json" ? "records" : "rows"}
 							className="h-8 w-full rounded-md border border-gray-500 focus:outline-none"
-							value={downloadSettings.fields || downloadSettings.rows}
+							value={downloadSettings.records || downloadSettings.rows}
 							onChange={(e) => {
 								if (e.target.valueAsNumber > 1 && e.target.valueAsNumber <= 10000) {
 									handleDownloadSettingsChange(e);

@@ -4,7 +4,7 @@ import Preview from "./Preview";
 
 const defaultJsonDownloadSettings = {
 	format: "json",
-	fields: 100,
+	records: 100,
 };
 const defaultSqlDownloadSettings = {
 	format: "sql",
