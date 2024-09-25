@@ -16,7 +16,7 @@ interface ExampleInterface {
 function useExample({ category, type, settings }: ExampleInterface) {
 	category = category.toLowerCase();
 	const { language } = useContext(ColumnsContext);
-	const [example, setExample] = useState<string>("");
+	const [example, setExample] = useState<string | boolean>("");
 
 	useEffect(() => {
 		let fakerInstance: Faker | undefined;
@@ -72,7 +72,7 @@ function useExample({ category, type, settings }: ExampleInterface) {
 				}
 				//začasen check če je npr. min > max v nastavitvah (parameters)
 			} else if (exampleValue !== undefined) {
-				setExample(String(exampleValue));
+				setExample(exampleValue);
 			}
 		} else {
 			setExample("no example");

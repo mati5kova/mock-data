@@ -68,7 +68,7 @@ function IndividualColumn({ column }: IndividualColumnProps) {
 					id="example"
 					className="w-96 h-full mr-6 text-ellipsis overflow-hidden whitespace-nowrap text-gray-600 text-sm"
 				>
-					{example}
+					{example.toString()}
 				</div>
 
 				<div className="w-80 h-full">
