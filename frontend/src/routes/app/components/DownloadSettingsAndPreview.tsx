@@ -4,10 +4,12 @@ import Preview from "./Preview";
 
 const defaultJsonDownloadSettings = {
 	format: "json",
+	type: "object",
 	records: 100,
 };
 const defaultSqlDownloadSettings = {
 	format: "sql",
+	tableName: "my_table",
 	rows: 100,
 };
 
@@ -29,7 +31,7 @@ function DownloadSettingsAndPreview() {
 	}, [downloadSettings.format]);
 
 	return (
-		<div className="flex flex-wrap flex-row justify-between max-h-[50vh] sm:max-md:gap-5">
+		<div className="flex flex-wrap flex-row justify-between min-h-fit max-h-[50vh] sm:max-md:gap-5">
 			<Preview downloadSettings={downloadSettings} />
 			<DownloadSettings downloadSettings={downloadSettings} setDownloadSettings={setDownloadSettings} />
 		</div>
